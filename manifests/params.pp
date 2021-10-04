@@ -52,6 +52,20 @@ class datadog_agent::params {
       $permissions_protected_file = '0600'
       $agent_binary               = '/opt/datadog-agent/bin/agent/agent'
     }
+    'Archlinux': {
+      $rubydev_package            = 'ruby'
+      $legacy_conf_dir            = '/etc/dd-agent/conf.d'
+      $conf_dir                   = '/etc/datadog-agent/conf.d'
+      $dd_user                    = 'dd-agent'
+      $dd_group                   = 'dd-agent'
+      $service_name               = 'datadog-agent'
+      $agent_log_file             = '/var/log/datadog/agent.log'
+      $package_name               = 'datadog-agent'
+      $permissions_directory      = '0755'
+      $permissions_file           = '0644'
+      $permissions_protected_file = '0600'
+      $agent_binary               = '/opt/datadog-agent/bin/agent/agent'
+    }
     'Windows': {
       $legacy_conf_dir            = 'C:/ProgramData/Datadog/agent5' # Not a real path, but integrations use it to ensure => absent so it needs to be a valid path
       $conf_dir                   = 'C:/ProgramData/Datadog/conf.d'
