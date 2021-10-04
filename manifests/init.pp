@@ -451,6 +451,11 @@ class datadog_agent(
           rpm_repo_gpgcheck   => $rpm_repo_gpgcheck,
         }
       }
+      'Archlinux' : {
+        class { 'datadog_agent::archlinux':
+          agent_major_version => $_agent_major_version,
+        }
+      }
       'Windows' : {
         class { 'datadog_agent::windows' :
           agent_major_version => $_agent_major_version,
